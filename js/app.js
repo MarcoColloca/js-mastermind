@@ -88,6 +88,7 @@ function playGame (){
     console.log(counter)
     numberString.innerHTML += userNumbers;
 
+    userNumbersDOMElement.value = ''
 }
 
 

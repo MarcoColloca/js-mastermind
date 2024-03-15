@@ -11,7 +11,7 @@ console.log('JS Trial')
 ///  • x = numero giusto posizione corretta
 
 
-// funzione che crea una quantità di numeri univoci pari a "howMany" ognuno di essi copmreso tra "min" e "max"
+// funzione che crea una quantità di numeri univoci pari a "howMany" ognuno di essi copmreso tra "min" e "max".
 function randomNumbers (min, max, howMany){
 
     const randomUniqueNumbers = []
@@ -21,7 +21,7 @@ function randomNumbers (min, max, howMany){
         let randomNumber = Math.floor(Math.random() * max) + min;
 
         if (randomUniqueNumbers.includes(randomNumber) === false){
-            // Inserisco il numero generato nell'Array
+            
             randomUniqueNumbers.push(randomNumber);
         }
 
@@ -31,7 +31,7 @@ function randomNumbers (min, max, howMany){
 }
 
 
-//funzione che converte una stringa in un array di numeri
+//funzione che converte una stringa in un array di numeri.
 function convertStringToNumberArray(numberString){
 
     let userNumbersArray = []
@@ -46,22 +46,8 @@ function convertStringToNumberArray(numberString){
 }
 
 
-
-
-
-
-
-const userNumbersDOMElement = document.getElementById('user-number')
-
-const resultBox = document.getElementById('result')
-const getNumbers = document.getElementById('submit-numbers')
-
-const gameNumbers = randomNumbers(1, 9, 4)
-console.log(gameNumbers)
-
-
-
-getNumbers.addEventListener('click', function(){
+// funzione che permette di avviare il giochino, quando si vince viene bloccato il pulsante per indovinare i numeri, ed appare il pulsante per il reset.
+function playGame (){
 
     const userNumbers = document.getElementById('user-number').value
 
@@ -91,8 +77,39 @@ getNumbers.addEventListener('click', function(){
 
         if(reslutString.innerHTML === 'x x x x '){
             reslutString.innerHTML = 'HAI VINTO!'
+            reset.classList.remove('d-none')
+            getNumbers.removeEventListener('click', playGame)
         }
     }
-})
+}
 
 
+// funzione che permette il reset del giochino.
+function resetGame(){
+    resultBox.innerHTML = ''
+
+    gameNumbers = randomNumbers(1, 9, 4)
+    console.log(gameNumbers)
+    reset.classList.add('d-none')
+    getNumbers.addEventListener('click', playGame)
+}
+
+
+
+
+
+const reset = document.getElementById('reset')
+
+const userNumbersDOMElement = document.getElementById('user-number')
+
+const resultBox = document.getElementById('result')
+const getNumbers = document.getElementById('submit-numbers')
+
+let gameNumbers = randomNumbers(1, 9, 4)
+console.log(gameNumbers)
+
+
+getNumbers.addEventListener('click', playGame)
+
+
+reset.addEventListener('click', resetGame)

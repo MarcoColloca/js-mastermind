@@ -66,6 +66,12 @@ h4{
     display: none;
 }
 
-.d-block{
-    display: block;
+#reset{
+    background-color: transparent;
+    border: 1px dotted white;
+    border-radius: 14px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: salmon;
 }

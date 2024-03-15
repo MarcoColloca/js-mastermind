@@ -51,19 +51,21 @@ function playGame (){
 
     const userNumbers = document.getElementById('user-number').value
 
+    let numberString = document.createElement('span')
     let reslutString = document.createElement('div')
     resultBox.append(reslutString)
-    reslutString.classList.add('reslut-string')
+    resultBox.append(numberString)
+    reslutString.classList.add('reslut-string', 'col-60')
+    numberString.classList.add('number-string', 'col-20')
 
     const playerNUmberArray = convertStringToNumberArray(userNumbers)
     
     
-    let counter = 0
+    
 
     for(let i = 0; i < playerNUmberArray.length; i++){
         
         const indexChecked = gameNumbers.indexOf(playerNUmberArray[i]);
-        
         
 
         if(indexChecked === (0 + i)){
@@ -72,15 +74,20 @@ function playGame (){
 
         }else if(indexChecked !== -1){
 
-            reslutString.innerHTML += ' o '
+            reslutString.innerHTML += 'o '
         }
 
         if(reslutString.innerHTML === 'x x x x '){
-            reslutString.innerHTML = 'HAI VINTO!'
+            reslutString.innerHTML = 'HAI VINTO! ci hai impiegato ' + '<span style="color:rgb(0, 81, 255);">' + (counter + 1) + '</span>' + ' tentativi'
             reset.classList.remove('d-none')
             getNumbers.removeEventListener('click', playGame)
         }
     }
+
+    counter += 1
+    console.log(counter)
+    numberString.innerHTML += userNumbers;
+
 }
 
 
@@ -89,7 +96,7 @@ function resetGame(){
     resultBox.innerHTML = ''
 
     gameNumbers = randomNumbers(1, 9, 4)
-    // console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+     console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
     reset.classList.add('d-none')
     getNumbers.addEventListener('click', playGame)
 }
@@ -106,11 +113,11 @@ const resultBox = document.getElementById('result')
 
 const getNumbers = document.getElementById('submit-numbers')
 
-
+let counter = 0
 
 
 let gameNumbers = randomNumbers(1, 9, 4)
-// console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
 
 
 

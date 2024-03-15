@@ -78,7 +78,7 @@ function playGame (){
         }
 
         if(reslutString.innerHTML === 'x x x x '){
-            reslutString.innerHTML = 'HAI VINTO! Ci hai impiegato ' + '<span style="color:rgb(0, 81, 255);">' + (counter + 1) + '</span>' + ' tentativi.'
+            reslutString.innerHTML = 'HAI VINTO! Ci hai impiegato ' + '<span style="color:rgb(0, 81, 255);">' + (counter+1) + '</span>' + ' tentativi.'
             reset.classList.remove('d-none')
             getNumbers.removeEventListener('click', playGame)
         }
@@ -97,9 +97,10 @@ function resetGame(){
     resultBox.innerHTML = ''
 
     gameNumbers = randomNumbers(1, 9, 4)
-    // console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+    console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
     reset.classList.add('d-none')
     getNumbers.addEventListener('click', playGame)
+    counter = 0
 }
 
 
@@ -118,7 +119,7 @@ let counter = 0
 
 
 let gameNumbers = randomNumbers(1, 9, 4)
-// console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
 
 
 

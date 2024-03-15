@@ -16,8 +16,24 @@ body{
 h1{
     color: salmon;
     font-size: 60px;
-    margin: 50px 0;
+    margin: 5px 0;
 }
+
+p{
+    color: white;
+    font-size: 18;
+}
+
+.title{
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.subtitle{
+    text-align: left;
+}
+
 
 .col-60{
     width: 60%;
@@ -80,6 +96,10 @@ h4{
 
 .d-none{
     display: none;
+}
+
+.column{
+    flex-direction: column;
 }
 
 #reset{

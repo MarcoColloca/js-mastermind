@@ -85,7 +85,7 @@ function playGame (){
     }
 
     counter += 1
-    console.log(counter)
+    // console.log(counter)
     numberString.innerHTML += userNumbers;
 
     userNumbersDOMElement.value = ''
@@ -97,7 +97,7 @@ function resetGame(){
     resultBox.innerHTML = ''
 
     gameNumbers = randomNumbers(1, 9, 4)
-     console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+    // console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
     reset.classList.add('d-none')
     getNumbers.addEventListener('click', playGame)
 }
@@ -118,7 +118,7 @@ let counter = 0
 
 
 let gameNumbers = randomNumbers(1, 9, 4)
-console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
+// console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
 
 
 

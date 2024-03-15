@@ -78,7 +78,7 @@ function playGame (){
         }
 
         if(reslutString.innerHTML === 'x x x x '){
-            reslutString.innerHTML = 'HAI VINTO! ci hai impiegato ' + '<span style="color:rgb(0, 81, 255);">' + (counter + 1) + '</span>' + ' tentativi'
+            reslutString.innerHTML = 'HAI VINTO! Ci hai impiegato ' + '<span style="color:rgb(0, 81, 255);">' + (counter + 1) + '</span>' + ' tentativi.'
             reset.classList.remove('d-none')
             getNumbers.removeEventListener('click', playGame)
         }

@@ -89,7 +89,7 @@ function resetGame(){
     resultBox.innerHTML = ''
 
     gameNumbers = randomNumbers(1, 9, 4)
-    console.log(gameNumbers)
+    // console.log(gameNumbers) /* se vuoi barare, attiva il commento ed in console trovi i numeri :-) */
     reset.classList.add('d-none')
     getNumbers.addEventListener('click', playGame)
 }
